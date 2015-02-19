@@ -11,7 +11,7 @@ def Start():
 	TrackObject.thumb = R(ICON)
 
 ####################################################################################################     
-@handler('/music/resonancefm', NAME, thumb=ICON, art=ART)
+@handler('/music/leprofm', NAME, thumb=ICON, art=ART)
 def MainMenu():
 
 	oc = ObjectContainer()
