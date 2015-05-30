@@ -1,7 +1,7 @@
 ART = 'art-default.jpg'
 ICON = 'icon-default.jpg'
 NAME = 'Lepro fm'
-STREAM_URL = 'http://leproradio.com/vorbis.ogg'
+STREAM_URL = 'http://leproradio.com/mpeg.mp4'
 
 ####################################################################################################
 def Start():
@@ -11,7 +11,7 @@ def Start():
 	TrackObject.thumb = R(ICON)
 
 ####################################################################################################     
-@handler('/music/leprofm', NAME, thumb=ICON, art=ART)
+@handler('/music/resonancefm', NAME, thumb=ICON, art=ART)
 def MainMenu():
 
 	oc = ObjectContainer()
@@ -29,11 +29,11 @@ def CreateTrackObject(url, title, include_container=False):
 		items = [
 			MediaObject(
 				parts = [
-					PartObject(key=Callback(PlayAudio, url=url, ext='ogg'))
+					PartObject(key=Callback(PlayAudio, url=url, ext='mp4'))
 				],
-				container = Container.OGG,
-				bitrate = 128,
-				audio_codec = AudioCodec.VORBIS,
+				container = Container.MP4,
+#				bitrate = 128,
+				audio_codec = AudioCodec.AAC,
 				audio_channels = 2
 			)
 		]
